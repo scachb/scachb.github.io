@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "dev": "govuk-prototype-kit dev",
+    "serve": "govuk-prototype-kit serve",
+    "start": "govuk-prototype-kit start"
+  },
+  "dependencies": {
+    "@govuk-prototype-kit/common-templates": "1.1.1",
+    "@govuk-prototype-kit/step-by-step": "^2.1.0",
+    "@govuk-prototype-kit/task-list": "^1.0.0",
+    "accessible-autocomplete": "^2.0.4",
+    "govuk-country-and-territory-autocomplete": "^1.0.2",
+    "govuk-frontend": "4.6.0",
+    "govuk-prototype-kit": "^13.8.1",
+    "hmrc-frontend": "^5.27.0",
+    "jquery": "3.6.4",
+    "navigation-radios": "github:x-govuk/prototype-navigation-radios"
+  }
+}
