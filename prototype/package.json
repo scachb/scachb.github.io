@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "govuk-prototype-kit": "^13.8.1"
+  }
+}

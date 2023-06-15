@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+         
+
+      <form class="form" action="/high-income" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+       
+
+       
+        {{ govukRadios({
+            classes: "govuk-radios--inline",
+          name: "what-is-your-nationality",
+          fieldset: {
+            legend: {
+              text: "Do you still want to claim Child Benefit?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+        
+            {
+              value: "Yes",
+              text: "Yes - I want to be paid Child Benefit. I understand that my partner or I may have to pay an Income Tax charge."
+            },
+            {
+              value: "No",
+              text: "No - I do not want to be paid Child Benefits, but I want to protect my State Pension."
+            }
+            ]
+        }) }}
+        
+
+
+        <p><a href="#">Save and continue later</a></p>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

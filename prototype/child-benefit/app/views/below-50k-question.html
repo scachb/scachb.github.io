@@ -1,0 +1,39 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Below 50k net income – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">How the tax charge works for you or your partner</h1>
+        
+        <p class="govuk-body">
+            There is no tax charge if your and your partner’s individual incomes are less than <strong>£50,100 in a year.</strong> If either of your incomes go over this amount while claiming Child Benefit, one of you may need to pay the High Income Child Benefit Charge.
+        </p>
+        <p class="govuk-body">
+            Only one person can get Child Benefit for a child, so you need to decide if you or your partner should claim. If one of you is not paying National Insurance because they’re not working or they earn less than £242 per week, it might be better for that person to claim.
+        </p>
+        
+        {{ govukWarningText({
+        text: "You must report any change of circumstances to the Child Benefit Office. If you are overpaid Child Benefit you might have to pay it back.",
+        iconFallbackText: "Warning"
+        }) }}
+
+        <p class="govuk-body">Claiming Child Benefit will help to protect your State Pension, and your child will get their National Insurance number automatically at 16.</p>
+        
+
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

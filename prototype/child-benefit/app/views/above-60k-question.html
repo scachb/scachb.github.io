@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">How the tax charge works for you or your partner</h1>
+        
+        <p class="govuk-body">
+            You or your partner’s income is over <strong>£60,000 in a year.</strong> The person with the highest income may have to pay a tax charge, called the High Income Child Benefit Charge.
+        </p>
+        <p class="govuk-body">
+            If you or your partner choose to receive Child Benefit payments, the payments you may get will be the same value as the tax charge. To pay the charge, the person that has the higher income must set up and fill in a Self-Assessment tax return each tax year.
+        </p>
+        <p class="govuk-body">
+            Only one person can get Child Benefit for a child, so you need to decide if you or your partner should claim. If one of you is not paying National Insurance because they’re not working or they earn less than £242 per week, it might be better for that person to claim.    
+        </p>
+        
+        {{ govukWarningText({
+        text: "You must report any change of circumstances to the Child Benefit Office. If you are overpaid Child Benefit you might have to pay it back. Use the Child Benefit tax calculator to estimate how much tax you or your partner may have to pay.",
+        iconFallbackText: "Warning"
+        }) }}
+
+        <p class="govuk-body">
+            It’s important to fill in this form even if you decide not to get Child Benefit payments. It will help to protect your State Pension, and your child will get their National Insurance number automatically at 16.
+      </p>
+         
+       
+        <form class="form" action="/your-net-income-answer-above-60k" method="post">
+
+            {% from "govuk/components/radios/macro.njk" import govukRadios %}
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+            {% from "govuk/components/select/macro.njk" import govukSelect %}
+            {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+            {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+
+            {{ govukRadios({
+            classes: "govuk-radios",
+            name: "your-net-income",
+            fieldset: {
+            legend: {
+            text: "Do you still want to be paid Child Benefit?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--l"
+            }
+            },
+            items: [
+            {
+            value: "Yes",
+            text: "Yes - I want to be paid Child Benefit, I understand that my partner or I may have to pay an Income Tax Charge..",
+            conditional: {
+            html: HICE
+            }
+            },
+            {
+            value: "No",
+            text: "No - I do not want to be paid Child Benefits, but I want to protect my State Pension. "
+            }
+            ]
+            }) }}
+
+
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

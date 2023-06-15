@@ -1,0 +1,12 @@
+2023-06-14T10:24:50.286Z
+cwd: ~/Documents/prototypes
+package: govuk-prototype-kit@13.8.1
+argv: /usr/local/bin/node ~/.npm/_npx/ab0cb2c39bc0319f/node_modules/.bin/govuk-prototype-kit migrate
+Started [Check migration is being applied to a pre v13 prototype]
+Failed [Check migration is being applied to a pre v13 prototype]
+2023-06-14T10:27:33.231Z
+cwd: ~/Documents/prototypes
+package: govuk-prototype-kit@13.8.1
+argv: /usr/local/bin/node ~/Documents/prototypes/node_modules/.bin/govuk-prototype-kit migrate
+Started [Check migration is being applied to a pre v13 prototype]
+Failed [Check migration is being applied to a pre v13 prototype]

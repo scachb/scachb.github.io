@@ -1,10 +1,8 @@
 {
 	"folders": [
 		{
+			"name": "scachb.github.io",
 			"path": "."
-		},
-		{
-			"path": "../../prototypes/child-benefit"
 		}
 	],
 	"settings": {}

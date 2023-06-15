@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Income details
+          </h1>
+
+          <p class="govuk-body">
+            If you or your partner have an individual income of:           
+          </p>
+          <ul class="govuk-body">
+            <li>below £50,000 - There is no tax charge if your and your partner's individual incomes are less than £50,100 in a year.</li>
+            <li>between £50,000 and £60,000 a year - a tax charge of less than the Child Benefit payment will apply, so you may want to be paid Child Benefit</li>
+            <li>more than £60,000 a year - a tax charge equal to the Child Benefit payment will apply, so you may not want to be paid Child Benefit</li>
+            
+        </ul>
+
+        <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              You or your partner's income is is between £50,100 and £60,000 over £60,000 in a year. The person with the highest income may have to pay a tax charge, called the High Income Child Benefit Charge. You must <a href="https://www.gov.uk/report-changes-child-benefit?_gl=1*1i4sp7w*_ga*MTk0NTg5MDMxMy4xNjc1MTc1MzUy*_ga_Y4LWMWY6WS*MTY3OTQ3MzcwNi4yNS4xLjE2Nzk0OTM2MzMuMC4wLjA.&_ga=2.96575516.2087841893.1679399929-1945890313.1675175352">report any change of circumstances to the Child Benefit Office (opens in new tab)</a>. If you are overpaid Child Benefit you might have to pay it back.
+            </strong>
+          </div>
+        
+
+      <form class="form" action="/high-income" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+        {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+        {{ govukRadios({
+            classes: "govuk-radios--inline",
+          name: "what-is-your-nationality",
+          fieldset: {
+            legend: {
+              text: "Do you still want to claim Child Benefit?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+        
+            {
+              value: "Yes",
+              text: "Yes - I want to be paid Child Benefit. I understand that my partner or I may have to pay an Income Tax charge."
+            },
+            {
+              value: "No",
+              text: "No - I do not want to be paid Child Benefits, but I want to protect my State Pension."
+            }
+            ]
+        }) }}
+        
+
+
+        <p><a href="#">Save and continue later</a></p>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
