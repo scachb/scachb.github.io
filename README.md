@@ -1,2 +1,3 @@
-# scachb.github.io
-SCA Child Benefit service design
+# SCA Child Benefit Service Design
+
+Building a Child Benefit claim service
